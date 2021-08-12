@@ -11,3 +11,34 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+body {
+  background: #f5e4bc;
+  font-family: "Poppins", sans-serif;
+}
+
+.no-decoration {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    text-decoration: none;
+    color: rgb(226, 225, 225);
+  }
+}
+
+h1 {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.red-link {
+  color: rgb(255, 36, 36);
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+    color: rgb(255, 72, 72);
+  }
+}

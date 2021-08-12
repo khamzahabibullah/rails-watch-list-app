@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-light bg-light">
+      <%= link_to lists_path, class: 'no-decoration' do %>
+        <i class="fas fa-film"> Watch List</i>
+      <% end %>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </nav>
     <%= yield %>
   </body>
 </html>

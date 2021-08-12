@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-4">
+    <div class="m-4">
+      <h1>Welcome to your Watch List</h1>
+      <h4>Your favorite movies, in one place.</h4>
+      <%= link_to 'Create a movie list', new_list_path, class: 'btn list-btn w-100 mt-5' %>
+    </div>
+  </div>
+  <div class="col-8">
+    <% @lists.each do |list| %>
+      <div class="card-category m-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.picture_url %>>)">
+        <%= link_to list.name, list_path(list), class: 'no-decoration' %>
+      </div>
+
+    <% end %>
+
+
+  </div>
+</div>
