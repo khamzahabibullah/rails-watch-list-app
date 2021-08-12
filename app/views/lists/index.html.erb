@@ -8,7 +8,7 @@
   </div>
   <div class="col-8">
     <% @lists.each do |list| %>
-      <div class="card-category m-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.picture_url %>>)">
+      <div class="card-category m-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path list.photo.key unless list.photo.blank?%>')">
         <%= link_to list.name, list_path(list), class: 'no-decoration' %>
       </div>
 
@@ -17,3 +17,5 @@
 
   </div>
 </div>
+
+<%# <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %> %>
