@@ -42,3 +42,17 @@ h1 {
     color: rgb(255, 72, 72);
   }
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animation {
+  /* This section calls the slideInFromLeft animation we defined above */
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+}
