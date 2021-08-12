@@ -9,7 +9,7 @@
 <%= link_to '+ Add a movie', new_list_bookmark_path(@list.id), class: 'btn m-4' %>
   <div class="d-flex flex-wrap">
     <% @list.bookmarks.each do |bookmark| %>
-    <div class="card-trip m-3" style="width: 20rem;">
+    <div class="card-trip m-3" style="width: 20rem;" data-aos="zoom-in" data-aos-easing="ease-in-back" data-aos-delay="300" data-aos-offset="0">
       <img src="<%= bookmark.movie.poster_url %>" />
       <div class="card-trip-infos">
         <div>
@@ -24,23 +24,28 @@
     </div>
     <% end %>
   </div>
-  <br>
-  <div>
-    <h2>Reviews</h2>
-    <%= simple_form_for ([@list, @review]) do |f| %>
-      <%= f.input :comment %>
-      <%= f.input :rating, collection: (0..5) %>
+  <div class="container separation"></div>
+  <div class="row">
+    <div class="col-5">
+      <h2 class="mb-4">Reviews</h2>
+      <%= simple_form_for ([@list, @review]) do |f| %>
+        <%= f.input :comment %>
+        <%= f.input :rating, collection: (0..5) %>
 
-      <%= f.button :submit %>
-    <% end %>
-
-    <ul class="list-group mt-5">
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+    <div class="col-7">
+    <ul class="list-group mt-5" >
       <% @list.reviews.each do |review| %>
-        <li class="list-group-item d-flex justify-content-between mb-5 align-items-center">
+        <li class="list-group-item d-flex justify-content-between mb-2 align-items-center " data-aos="fade-down">
           <h5 class="m-0"><%= review.comment %></h5>
-          <p class="m-0"><%= review.rating %></p>
+          <p class="m-0"><% review.rating.times do%>
+            <i class="fas fa-star" style="color: gold;"></i>
+          <% end %></p>
         </li>
       <% end %>
     </ul>
+    </div>
   </div>
 </div>
